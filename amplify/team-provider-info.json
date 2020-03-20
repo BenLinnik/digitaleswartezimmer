@@ -1,0 +1,15 @@
+{
+    "develop": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-digitaleswartezimmer-develop-223700-authRole",
+            "UnauthRoleArn": "arn:aws:iam::075558797491:role/amplify-digitaleswartezimmer-develop-223700-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::075558797491:role/amplify-digitaleswartezimmer-develop-223700-authRole",
+            "Region": "eu-central-1",
+            "DeploymentBucketName": "amplify-digitaleswartezimmer-develop-223700-deployment",
+            "UnauthRoleName": "amplify-digitaleswartezimmer-develop-223700-unauthRole",
+            "StackName": "amplify-digitaleswartezimmer-develop-223700",
+            "StackId": "arn:aws:cloudformation:eu-central-1:075558797491:stack/amplify-digitaleswartezimmer-develop-223700/59ce4f90-6afb-11ea-ac7a-023cc2de05b4",
+            "AmplifyAppId": "d1dtd39jzwnqx3"
+        }
+    }
+}
