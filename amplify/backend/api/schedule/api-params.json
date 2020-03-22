@@ -1,0 +1,41 @@
+{
+    "paths": [
+        {
+            "name": "/schedule/{date}",
+            "lambdaFunction": "schedule",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            }
+        }
+    ],
+    "resourceName": "schedule",
+    "apiName": "schedule",
+    "functionArns": [
+        {
+            "lambdaFunction": "schedule"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "amplify-digitaleswartezimmer-develop-223700-authRole",
+        "unAuthRoleName": "amplify-digitaleswartezimmer-develop-223700-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "schedule",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

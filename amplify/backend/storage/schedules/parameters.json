@@ -1,0 +1,7 @@
+{
+    "tableName": "schedules",
+    "partitionKeyName": "doctor_id",
+    "partitionKeyType": "S",
+    "sortKeyName": "date_patient",
+    "sortKeyType": "S"
+}
