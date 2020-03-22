@@ -1,6 +1,6 @@
 ## Project Description
-View on Project Video on [Youtube](https://youtu.be/xMnTW8nUscM)
-View Project und [DevPost](https://devpost.com/software/033_lebensnotwendigedienstleistungen_digitaleswartezimmer)
+View on Project Video on [Youtube](https://youtu.be/xMnTW8nUscM) <br />
+View Project on [DevPost](https://devpost.com/software/033_lebensnotwendigedienstleistungen_digitaleswartezimmer)
 ![alt text](https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/967/927/datas/gallery.jpg)!
 
 
