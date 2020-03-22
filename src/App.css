@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.logo {
+padding: 3px;
+display: inline-block; 
+  height: 20vmin;
+  margin: 0 auto;
+}
+
+.logo-container {
+  width: 100%;
+text-align: center;
+}

@@ -14,6 +14,7 @@ import TextField from '@material-ui/core/TextField';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
+    overflowX: 'hidden'
   },
   paper: {
     padding: theme.spacing(2),
@@ -37,64 +38,60 @@ function MyPositionGrid(props) {
     
     
     return (
-  <div>   
-   <Grid container spacing={3}>
-        <Grid item xs></Grid>
-        <Grid item xs={6}>
-    <Paper variant="outlined">
-            <h2>Herzlich willkommen,</h2>
-            <p>in der virtuellen Warteliste der Arztpraxis <br/>{datasource.praxis}<br/>
-            </p>
-            <p>
-            Anzahl Patienten vor dir: {datasource.position}<br/>
-            Aktuelle Wartezeit: {datasource.delay}  
-            
-            </p>
-
-          Voraussichtlicher Behandlungsbeginn:<br/>
-            <span style={{color: 'blue'}}>{datasource.scheduleTime} Uhr</span>
-          <p>
-            <Button  href="https://1d581d65f8334e24ab9c933e6ebf7bb9.vfs.cloud9.eu-central-1.amazonaws.com/my-position" variant="contained" color="primary" disableElevation>
-              Aktualisieren
-            </Button>
-          </p>
-      </Paper>
-        </Grid>
-        <Grid item xs></Grid>
-      </Grid>
-         <Grid container spacing={3}>
-        <Grid item xs>
-        </Grid>
-        <Grid item xs={6}>
+<div className="root">
+    <Grid container spacing={3}>
+        <Grid item md></Grid>
+        <Grid item xs={12} md={6}>
             <Paper variant="outlined">
-            <h2>Herzlich willkommen,</h2>
-            <p>in der virtuellen Warteliste ihrer Arztpraxis.<br/>
-            </p>
-            <p>Bitte geben Sie die Ihnen zugewiesene Wartenummer ein:</p>
-          <FormControl>
+                <Typography variant="h5" gutterBottom>
+                    Herzlich willkommen
+                </Typography>
+                <p>in der virtuellen Warteliste der Arztpraxis
+                    <br/>{datasource.praxis}
+                    <br/>
+                </p>
+                <p>
+                    Anzahl Patienten vor dir: {datasource.position}
+                    <br/> Aktuelle Wartezeit: {datasource.delay}
 
-            <form  noValidate autoComplete="off">
-            <TextField
-          label="Wartenummer"
-          id="wartenummer"
-          defaultValue=""
-          variant="outlined"
-        />
-          <p>
-            <Button onClick={() => { handleWN(); }} href="https://1d581d65f8334e24ab9c933e6ebf7bb9.vfs.cloud9.eu-central-1.amazonaws.com/my-position" variant="contained" color="primary" disableElevation>
-              In die Warteliste eintragen
-            </Button>
-          </p>
+                </p>
 
-          </form>
-          </FormControl>
-          
+                Voraussichtlicher Behandlungsbeginn:
+                <br/>
+                <span style={{color: 'blue'}}>{datasource.scheduleTime} Uhr</span>
+                <p>
+                    <Button href="https://1d581d65f8334e24ab9c933e6ebf7bb9.vfs.cloud9.eu-central-1.amazonaws.com/my-position" variant="contained" color="primary" disableElevation>
+                        Aktualisieren
+                    </Button>
+                </p>
+            </Paper>
+        </Grid>
+        <Grid item md></Grid>
+    </Grid>
+    <Grid container spacing={3}>
+        <Grid item md>
+        </Grid>
+        <Grid item xs={12} md={6}>
+            <Paper variant="outlined">
+                <p>Bitte geben Sie die Ihnen zugewiesene Wartenummer ein:</p>
+                <FormControl>
+
+                    <form noValidate autoComplete="off">
+                        <TextField label="Wartenummer" id="wartenummer" defaultValue="" variant="outlined" />
+                        <p>
+                            <Button onClick={()=> { handleWN(); }} href="https://1d581d65f8334e24ab9c933e6ebf7bb9.vfs.cloud9.eu-central-1.amazonaws.com/my-position" variant="contained" color="primary" disableElevation> In die Warteliste eintragen
+                            </Button>
+                        </p>
+
+                    </form>
+                </FormControl>
+
             </Paper>
         </Grid>
         <Grid item xs>
         </Grid>
-      </Grid>
-      </div>
+    </Grid>
+</div>
     );
 }
 
@@ -102,31 +99,35 @@ function MyPositionInputNumber(props) {
     const datasource = props.data;
     return (
    <Grid className={this.props.status ? 'hidden' : ''}  container spacing={3}>
-        <Grid item xs>
-        </Grid>
-        <Grid item xs={6}>
-            <Paper variant="outlined">
-            <h2>Herzlich willkommen,</h2>
-            <p>in der virtuellen Warteliste ihrer Arztpraxis.<br/>
-            </p>
-            <p>Bitte geben Sie die Ihnen zugewiesene Wartenummer ein:</p>
-            <form  noValidate autoComplete="off">
-            <TextField
-          label="Wartenummer"
-          id="wartenummer"
-          defaultValue=""
-          variant="outlined"
-        />
-          <p>
-            <Button href="https://1d581d65f8334e24ab9c933e6ebf7bb9.vfs.cloud9.eu-central-1.amazonaws.com/my-position" variant="contained" color="primary" disableElevation>
-              In die Warteliste eintragen
-            </Button>
-          </p>
-
-          </form>
+        <Grid container spacing={3}>
+          <Grid item xs>
+            <Paper>xs</Paper>
+          </Grid>
+          <Grid item xs>
+                        <Paper variant="outlined">
+              <h2>Herzlich willkommen,</h2>
+              <p>in der virtuellen Warteliste ihrer Arztpraxis.<br/>
+              </p>
+              <p>Bitte geben Sie die Ihnen zugewiesene Wartenummer ein:</p>
+              <form  noValidate autoComplete="off">
+                <TextField
+                  label="Wartenummer"
+                  id="wartenummer"
+                  defaultValue=""
+                  variant="outlined"
+                />
+                  <p>
+                    <Button href="https://1d581d65f8334e24ab9c933e6ebf7bb9.vfs.cloud9.eu-central-1.amazonaws.com/my-position" variant="contained" color="primary" disableElevation>
+                      In die Warteliste eintragen
+                    </Button>
+                  </p>
+  
+              </form>
             </Paper>
-        </Grid>
-        <Grid item xs>
+          </Grid>
+          <Grid item xs>
+            <Paper>xs</Paper>
+          </Grid>
         </Grid>
       </Grid>
 
