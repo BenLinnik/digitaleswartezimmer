@@ -50,6 +50,11 @@ function AskPositionGrid(props) {
             <Grid item xs>
             </Grid>
         </Grid>
+        <p>
+        Für die Jury: <Link className="btn btn-primary" href={`/schedule`}>
+                                Demo Arztsicht
+                              </Link>
+                              </p>
     </div>
     );
 }

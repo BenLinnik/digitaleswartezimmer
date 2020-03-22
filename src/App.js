@@ -8,6 +8,7 @@ import Footer from './Footer';
 import {
   BrowserRouter as Router,
   Switch,
+  Redirect,
   Route,
   useParams
 } from "react-router-dom";
@@ -33,7 +34,10 @@ function App() {
             <AskPosition/>
           </Route>
           <Route path='/schedule'>
-            <Schedule table={getData} scheduleDate='21.03.2020' />
+            <Schedule table={getData} scheduleDate='22.03.2020' />
+          </Route>
+          <Route path='/'>
+            <Redirect push to="/my-position"/>
           </Route>
         </Switch>
       </div>

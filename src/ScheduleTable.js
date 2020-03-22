@@ -42,7 +42,7 @@ export default function ScheduleTable(props) {
           <TableRow>
             <TableCell>Termin</TableCell>
             <TableCell>Patient</TableCell>
-            <TableCell>Behandlungsdauer</TableCell>
+            <TableCell>Dauer</TableCell>
             <TableCell padding="checkbox">Status</TableCell>
             <TableCell align="right" padding="checkbox"></TableCell>
             <TableCell align="right" padding="checkbox">  

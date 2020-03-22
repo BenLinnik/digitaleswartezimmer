@@ -4,11 +4,12 @@ var style = {
     backgroundColor: "#F8F8F8",
     borderTop: "1px solid #E7E7E7",
     textAlign: "center",
-    padding: "20px",
+    padding: "10px",
+    paddingBottom: "20px",
     position: "fixed",
     left: "0",
     bottom: "0",
-    height: "1vh",
+    height: "3vh",
     width: "100%",
 }
 
@@ -23,7 +24,7 @@ export default function Footer() {
         <div>
             <div style={phantom} />
             <div style={style}>
-                Das digitale Wartezimmer, für weniger Stress
+                Das digitale Wartezimmer, für weniger Stress<br />Entstanden im Rahmen des Hackathons "#WirVsVirus"<br/>
             </div>
         </div>
     )
