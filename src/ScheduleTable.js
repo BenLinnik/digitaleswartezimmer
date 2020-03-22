@@ -9,6 +9,8 @@ import TableRow from '@material-ui/core/TableRow';
 import Tooltip from '@material-ui/core/Tooltip';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 import AddIcon from '@material-ui/icons/Add';
 import DeleteIcon from '@material-ui/icons/Delete';
 import InviteIcon from '@material-ui/icons/AssignmentInd';
@@ -20,13 +22,21 @@ import IconButton from '@material-ui/core/IconButton';
     },
   }));
 
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
+
 export default function ScheduleTable(props) {
   const entries = props.entries;
   const handleAdd = props.handleAdd;
   const handleDelete = props.handleDelete;
   const handleInvite = props.handleInvite;
   const classes = useStyles();
+  
+  const [notificationOpen, setNotificationOpen] = React.useState(false);
+  
   return (
+    <div className={classes.root}>
     <TableContainer component={Paper} className={classes.noOverflow}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
@@ -55,11 +65,16 @@ export default function ScheduleTable(props) {
                <TableCell padding="checkbox">{entry.wait_state}</TableCell>
                <TableCell size="small" align="right" padding="checkbox">     
                 <Tooltip title="Patient reinrufen" aria-label="invite">
-                 <IconButton onClick={e => handleInvite(entry.date_patient)}>
+                 <IconButton onClick={e => { handleInvite(entry.date_patient); setNotificationOpen(true);}}>
                    <InviteIcon color="primary"/>
                  </IconButton>
                  </Tooltip>
-               </TableCell>
+              <Snackbar open={notificationOpen} autoHideDuration={6000}>
+                <Alert severity="success">
+                  Patient {entry.patient_id} wird informiert!
+                </Alert>
+              </Snackbar>
+              </TableCell>
                <TableCell size="small" align="right" padding="checkbox">
                 <Tooltip title="Warteposition löschen" aria-label="delete">
                  <IconButton onClick={e => handleDelete(entry.date_patient)}>
@@ -72,6 +87,9 @@ export default function ScheduleTable(props) {
         }
         </TableBody>
         </Table>
+
     </TableContainer>
+                      
+    </div>
   );
 }

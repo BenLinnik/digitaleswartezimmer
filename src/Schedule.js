@@ -103,7 +103,7 @@ export default function Schedule(props) {
   
   const handleInvite = async (id) => {
     await invitePatient(id);
-    await sleep(1000);
+    await sleep(5000);
     setDialogWatch(!dialogWatch);
   };
   
@@ -160,7 +160,7 @@ export default function Schedule(props) {
                         <ScheduleTable entries={data_filtered} handleAdd={()=> setOpen(true)} handleDelete={handleDelete} handleInvite={handleInvite}/> ) }}
                     </Async.Fulfilled>
                     <Async.Rejected>
-                        {error => `Something went wrong: ${error}`}
+                        {error => `Da ist wohl was schief gelaufen: ${error}`}
                     </Async.Rejected>
                 </Async>
             </Paper>
