@@ -1,19 +1,15 @@
 import React from 'react';
-import API from '@aws-amplify/api';
 import './App.css';
-import MyPosition from './MyPosition';
 import AskPosition from './AskPosition';
 import ShowPosition from './ShowPosition';
 import Schedule from './Schedule';
 import {getData, getMyPosition} from './ScheduleRepo';
 import Footer from './Footer';
-import { useParams } from "react-router-dom";
-
-
 import {
   BrowserRouter as Router,
   Switch,
   Route,
+  useParams
 } from "react-router-dom";
 
 

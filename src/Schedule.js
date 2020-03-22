@@ -1,9 +1,9 @@
 import React from 'react';
 import Async from 'react-async';
 import { makeStyles } from '@material-ui/core/styles';
-import ScheduleTable from './ScheduleTable'
+import ScheduleTable from './ScheduleTable';
 import {KeyboardDatePicker} from '@material-ui/pickers';
-import Typography from '@material-ui/core/Typography'
+import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
@@ -13,8 +13,6 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import AddIcon from '@material-ui/icons/Add';
-import IconButton from '@material-ui/core/IconButton';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -24,9 +22,6 @@ import {postData, deleteData, generatePatientId, invitePatient} from './Schedule
 
 export default function Schedule(props) {
   
-  const scheduleDate = props.scheduleDate;
-  const table = props.table;
-  
   const [dialogWatch, setDialogWatch] = React.useState(false);
   const [patientId, setPatientId] = React.useState("");
   const [open, setOpen] = React.useState(false);
@@ -35,10 +30,6 @@ export default function Schedule(props) {
   const [time, setTime] = React.useState("10");
   const [selectedDate, setSelectedDate] = React.useState(new Date());
 
-  const handleDateChange = date => {
-    setSelectedDate(date);
-  };
-  
   const useStyles = makeStyles(theme => ({
     formControl: {
       margin: theme.spacing(1),
@@ -80,7 +71,6 @@ export default function Schedule(props) {
       "id": patientId,
       time
     };
-    console.log(`posting: ${JSON.stringify(entry)}`);
     postData(entry);
     await sleep(1000);
     setDialogWatch(!dialogWatch);
@@ -119,7 +109,7 @@ export default function Schedule(props) {
                         Ihre Patienten Warteliste
                     </Typography>
 
-                    <KeyboardDatePicker disableToolbar variant="inline" format="dd.MM.yyyy" margin="normal" id="date-picker-inline" label="Tag wählen" value={selectedDate} onChange={(date)=> setSelectedDate(date)} KeyboardButtonProps={{ 'aria-label': 'change date', }} />
+                    <KeyboardDatePicker format="dd.MM.yyyy" margin="normal" id="date-picker-inline" label="Tag wählen" value={selectedDate} onChange={(date)=> setSelectedDate(date)} KeyboardButtonProps={{ 'aria-label': 'change date', }} />
                 </header>
                 <Dialog open={open} onEnter={handleDialogOpen} onClose={()=> setOpen(false)} aria-labelledby="form-dialog-title">
                     <DialogTitle id="form-dialog-title">Patient einfügen</DialogTitle>
